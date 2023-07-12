@@ -5,10 +5,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-// const bookingRouter = require('./src/routes/bookingRoutes.js');
+const bookingRouter = require('./src/routes/bookingRoutes.js');
 // const flightRouter = require('./src/routes/flightRoutes.js');
 
-// app.use(bookingRouter);
+app.use(bookingRouter);
 // app.use(flightRouter);
 
 
