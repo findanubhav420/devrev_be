@@ -1,7 +1,0 @@
-cors
-dotenv
-express
-pg
-pg-hstore
-sequelize
-sequelize-cli
