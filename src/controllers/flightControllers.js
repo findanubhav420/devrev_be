@@ -7,7 +7,7 @@ const getAllFlights = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 const createFlight = async (req, res) => {
     try {
@@ -16,7 +16,7 @@ const createFlight = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 const deleteFlightById = async (req, res) => {
     try {
@@ -25,10 +25,10 @@ const deleteFlightById = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 module.exports = {
     getAllFlights,
     createFlight,
     deleteFlightById
-}
+};

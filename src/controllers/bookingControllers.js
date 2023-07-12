@@ -7,7 +7,7 @@ const getAllBookings = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 const createBooking = async (req, res) => {
     try {
@@ -16,9 +16,9 @@ const createBooking = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
 module.exports = {
     getAllBookings,
     createBooking
-}
+};
