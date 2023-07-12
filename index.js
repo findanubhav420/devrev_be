@@ -4,8 +4,8 @@ const app = express();
 const bookingRouter = require('./src/routes/bookingRoutes.js');
 const flightRouter = require('./src/routes/flightRoutes.js');
 
-app.use('/bookings', bookingRouter);
-app.use('/flights', flightRouter);
+app.use(bookingRouter);
+app.use(flightRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
