@@ -2,10 +2,10 @@
   "name": "ftb_be",
   "version": "1.0.0",
   "description": "",
-  "main": "ind.js",
+  "main": "index.js",
   "engines":{ "node": "18.x" },
   "scripts": {
-    "start": "node ind.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
