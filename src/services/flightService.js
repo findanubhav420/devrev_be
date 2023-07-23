@@ -1,7 +1,25 @@
-const {flights} = require('../../database/models/index');
+const { Op, or } = require('sequelize');
+const {flights, bookings} = require('../../database/models/index');
 
 const getAllFlights = async () => {
-    return await flights.findAll();
+    return await flights.findAll({
+        where: {
+            seat: {
+                [Op.gt]: 0
+            }
+        },
+        order: [
+            ['departureTime', 'ASC']
+        ]
+    });
+}
+
+const getFlightById = async (id) => {
+    return await flights.findOne({
+        where: {
+            flightId: id
+        }
+    });
 }
 
 const createFlight = async (data) => {
@@ -19,17 +37,29 @@ const createFlight = async (data) => {
 }
 
 const deleteFlightById = async (id) => {
+    await bookings.destroy({
+        where: {
+            flightId: id
+        }
+    });
     const flight = await flights.findOne({
         where: {
             flightId: id
         }
     });
-    flight.destroy();
+    await flights.destroy({
+        where: {
+            flightId: id
+        }
+    });
+
+
     return flight;
 }
 
 module.exports = {
     getAllFlights,
+    getFlightById,
     createFlight,
     deleteFlightById
 }

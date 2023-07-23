@@ -9,6 +9,15 @@ const getAllFlights = async (req, res) => {
     }
 };
 
+const getFlightById = async (req, res) => {
+    try {
+        const flight = await flightService.getFlightById(req.params.id);
+        res.status(200).json(flight);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 const createFlight = async (req, res) => {
     try {
         const flight = await flightService.createFlight(req.body);
@@ -29,6 +38,7 @@ const deleteFlightById = async (req, res) => {
 
 module.exports = {
     getAllFlights,
+    getFlightById,
     createFlight,
     deleteFlightById
 };

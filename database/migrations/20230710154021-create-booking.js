@@ -8,6 +8,9 @@ module.exports = {
         autoIncrement: true,
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.STRING,
+      },
       flightId: {
         type: Sequelize.STRING,
         references: {
@@ -33,7 +36,7 @@ module.exports = {
       },
       seat: {
         type: Sequelize.STRING
-    },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

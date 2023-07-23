@@ -9,6 +9,15 @@ const getAllBookings = async (req, res) => {
     }
 };
 
+const getBookingById = async (req, res) => {
+    try {
+        const booking = await bookingService.getBookingById(req.params.id);
+        res.status(200).json(booking);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 const createBooking = async (req, res) => {
     try {
         const booking = await bookingService.createBooking(req.body);
@@ -18,7 +27,28 @@ const createBooking = async (req, res) => {
     }
 };
 
+const deleteBooking = async (req, res) => {
+    try {
+        const booking = await bookingService.deleteBooking(req.params.id);
+        res.status(200).json(booking);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+const getBookingByFlightId = async (req, res) => {
+    try {
+        const booking = await bookingService.getBookingByFlightId(req.params.id);
+        res.status(200).json(booking);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
 module.exports = {
     getAllBookings,
-    createBooking
+    createBooking,
+    getBookingById,
+    deleteBooking,
+    getBookingByFlightId
 };

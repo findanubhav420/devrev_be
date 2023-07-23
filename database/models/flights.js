@@ -22,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
     source: DataTypes.STRING,
     destination: DataTypes.STRING,
     departureTime: DataTypes.DATE,
-    // priceVal: DataTypes.STRING,
     arrivalTime: DataTypes.DATE,
     seat: DataTypes.INTEGER,
     price: DataTypes.INTEGER
